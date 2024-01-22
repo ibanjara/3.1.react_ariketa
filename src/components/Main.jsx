@@ -23,7 +23,7 @@ export const Main = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch(`/espacios-naturales.json`);
+            const response = await fetch(`http://localhost/espacios.php`);
             if (!response.ok) {
                 throw new Error('Zerbait gaizki joan da.');
             }
@@ -74,6 +74,8 @@ export const Main = () => {
 
                     setMunicipios(municipiosArray);
                     setEntornos(entornosArray);
+                    setSelectedMunicipio(municipiosArray[0]);
+                    setSelectedEntorno(entornosArray[0]);
                     fetchInfo(municipiosArray[0], entornosArray[0]);
                 }
             }
